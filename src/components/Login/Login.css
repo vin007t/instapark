@@ -1,0 +1,154 @@
+/* Full Page Background */
+.auth-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    background: url('frontend/public/car1.jpg') no-repeat center center/cover;
+    backdrop-filter: blur(50px);
+}
+
+/* Authentication Box */
+.auth-box {
+    width: 750px;
+    height: 450px;
+    display: flex;
+    position: absolute;
+    left: 50%;
+    top: 48%; /* Moved up slightly */
+    transform: translate(-50%, -50%);
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    border-radius: 20px;
+    transition: transform 0.5s ease-in-out;
+}
+
+/* Authentication Sections (Register & Login) */
+.auth-section {
+    width: 50%;
+    padding: 30px;
+    position: absolute;
+    left: 50%;
+    top: 0;
+    height: 100%;
+    transition: transform 0.5s ease-in-out, opacity 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Moved content higher */
+    align-items: center;
+    padding-top: 20px; /* Added padding to move everything up */
+}
+
+.register {
+    left: 0;
+}
+
+.login {
+    left: 100%;
+}
+
+/* Stylish Sliding Background */
+.auth-slider {
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: linear-gradient(135deg, #f1f819, #f7f7f8);
+    transition: transform 0.5s ease-in-out;
+    border-radius: 20px 0 0 20px;
+}
+
+/* Switch to Login Mode */
+.auth-box.login-mode .auth-slider {
+    transform: translateX(100%);
+    border-radius: 0 20px 20px 0;
+}
+
+.auth-box.login-mode .register {
+    transform: translateX(-100%);
+    opacity: 0;
+}
+
+.auth-box.login-mode .login {
+    transform: translateX(-100%);
+    opacity: 1;
+}
+
+/* Adjust text box size and spacing */
+.auth-section input {
+    width: 100%;
+    padding: 19px;
+    font-size: 16px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    margin-bottom: 20px;
+    margin-right: auto;
+}
+
+/* Fix Login input and button alignment */
+.login .input-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Buttons */
+.auth-section button {
+    width: 100%;
+    padding: 12px;
+    background-color: #303f00;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+    margin-top: 15px;
+     /* Adjusted for better spacing */
+}
+
+.auth-section button:hover {
+    background-color: #dbf727;
+}
+
+/* Google Sign-in Button Alignment */
+.google-auth {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+/* Links */
+.auth-section p {
+    text-align: center;
+    font-weight: bold;
+    margin-top: 5px; /* Moved up */
+}
+
+.auth-section span {
+    color: #0074D9;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+/* Adjusting White Text */
+.auth-slider h2, .auth-slider button {
+    color: rgb(44, 128, 11);
+}
+
+/* Make Registration & Login Heading Dark and Bold */
+.register h2, .login h2 {
+    font-size: 25px;
+    color: #264004;
+    font-weight: bold;
+}
+
+/* Move 'Don't have an account?' up */
+.auth-section .register-link {
+    margin-top: 0px; /* Moves text up */
+}
